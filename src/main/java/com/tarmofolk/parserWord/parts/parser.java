@@ -33,9 +33,9 @@ public class parser {
 
     static String processText(String input) {
         String result = input
-                .replaceAll("(0[1-9]|[12][0-9]|3[01])[- /.]([а-яА-ЯёЁa-zA-Z0-9]+)[- /.](19|20)\\d\\d( года| г\\.)*", "document_date")
+                .replaceAll("(0[1-9]|[12][0-9]|3[01])[- /.]([а-яА-ЯёЁa-zA-Z]+)[- /.](19|20)\\d\\d( года| г\\.)*", "document_date")
                 .replaceAll("(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d", "document_date")
-                .replaceAll("[N№][- /.]([а-яА-ЯёЁa-zA-Z0-9\\-\\/]+)", "document_number");
+                .replaceAll("[N№][- /.]([а-яА-ЯёЁa-zA-Z0-9\\-\\/*]+)", "document_number");
         return result;
     }
 }
